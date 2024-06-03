@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -7,5 +7,6 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   templateUrl: './public.component.html',
   styleUrl: './public.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class PublicComponent {}
