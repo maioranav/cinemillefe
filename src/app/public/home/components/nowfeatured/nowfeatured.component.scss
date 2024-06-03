@@ -1,0 +1,32 @@
+.featured-film-cover {
+  position: relative;
+
+  img {
+    width: 100%;
+    aspect-ratio: 2.35;
+    object-fit: cover;
+    min-height: 210px;
+    max-height: 50dvh;
+  }
+
+  .watch-now {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    button {
+      transform: translateY(-20px);
+      background-color: #00a4bb;
+      color: white;
+      border: 1px solid #5fd0df8a;
+      padding: 7px 50px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: 2px 2px 12px #5fd0df8a;
+      }
+    }
+  }
+}
