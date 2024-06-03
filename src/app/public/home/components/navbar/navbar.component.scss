@@ -3,7 +3,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 4rem;
-  padding-inline: 18px;
+  padding-inline: clamp(18px, 5vw, 60px);
   border-bottom: 1px solid #fff5;
   background-color: #060c19;
 }
@@ -11,6 +11,8 @@ header {
 .brand-logo {
   -webkit-user-select: none;
   user-select: none;
+  font-weight: 200;
+  font-size: 1.5rem;
 }
 
 .nav-bar {

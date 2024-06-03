@@ -1,0 +1,13 @@
+.section-title {
+  padding-inline: clamp(18px, 5vw, 60px);
+}
+
+.scheduled-films {
+  @extend .section-title;
+  display: flex;
+  overflow-y: auto;
+  column-gap: 16px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 4rem;
+}

@@ -1,0 +1,38 @@
+.film-card {
+  width: 300px;
+  border-radius: 16px;
+  margin-block: 0.6rem;
+  background-color: #222222;
+  transition: all 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.63);
+  }
+}
+
+.film-card-image {
+  img {
+    border-start-start-radius: 16px;
+    border-start-end-radius: 16px;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+}
+
+.film-card-content {
+  padding-inline: 16px;
+  p {
+    &:first-child {
+      margin-block: 0.5rem;
+    }
+
+    &:last-child {
+      margin: 0;
+      font-size: 0.8rem;
+      opacity: 0.6;
+      padding-bottom: 18px;
+    }
+  }
+}
