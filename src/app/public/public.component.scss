@@ -2,3 +2,8 @@ body {
   background-color: #16151c;
   color: white;
 }
+
+* {
+  -webkit-user-select: none;
+  user-select: none;
+}

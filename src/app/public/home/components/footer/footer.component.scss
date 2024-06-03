@@ -1,0 +1,19 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  padding-inline: clamp(18px, 5vw, 60px);
+  border-bottom: 1px solid #fff5;
+  background-color: #060c19;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: #f5f5f5;
+    text-decoration: underline;
+  }
+}
