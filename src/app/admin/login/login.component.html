@@ -1,0 +1,7 @@
+<p>login works!</p>
+<button [routerLink]="'/'">Home</button>
+<button [routerLink]="'/admin'">Dashboard</button>
+
+<p>token {{this.authService.authStatus.authToken}}</p>
+<p>auth {{this.authService.authStatus.isAuthenticated}}</p>
+<p>load {{this.authService.authStatus.isLoading}}</p>
