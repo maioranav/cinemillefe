@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
 
   async login() {
     if (!this.loginForm.valid) return;
-    await this.authService.login({
+    await AuthService.login({
       username: this.loginForm.value.username ?? '',
       password: this.loginForm.value.password ?? '',
     });

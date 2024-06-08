@@ -21,7 +21,6 @@ class PermissionsService {
     const hasToken = AuthService.getInstance().authStatus.authToken;
 
     if (isAuth || hasToken) {
-      console.log('sono auth');
       const auth = await AuthService.refreshToken();
       if (auth) return true;
     }

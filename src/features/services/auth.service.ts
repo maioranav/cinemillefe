@@ -28,6 +28,13 @@ export class AuthService {
     return this._authStatus();
   }
 
+  public static logout = () => {
+    AuthService.getInstance()._authStatus.set({
+      isAuthenticated: false,
+      isLoading: false,
+    });
+  };
+
   public static refreshToken = async () => {
     if (!AuthService.getInstance().authStatus.authToken) return false;
 
@@ -48,7 +55,7 @@ export class AuthService {
 
       if (!request?.ok) throw new Error(await request.text());
 
-      const data: any = request.json();
+      const data: any = await request.json();
 
       AuthService.getInstance()._authStatus.set({
         isAuthenticated: true,
@@ -68,9 +75,9 @@ export class AuthService {
     }
   };
 
-  public login = async (loginInfo: LoginDTO) => {
+  public static login = async (loginInfo: LoginDTO) => {
     try {
-      this._authStatus.set({
+      AuthService.getInstance()._authStatus.set({
         isAuthenticated: false,
         isLoading: true,
       });
@@ -86,13 +93,13 @@ export class AuthService {
       if (!request?.ok) throw new Error(await request.text());
 
       const data: any = await request.json();
-      this._authStatus.set({
+      AuthService.getInstance()._authStatus.set({
         isAuthenticated: true,
         isLoading: false,
         authToken: 'Bearer ' + data.accessToken,
       });
     } catch (e) {
-      this._authStatus.set({
+      AuthService.getInstance()._authStatus.set({
         isAuthenticated: false,
         isLoading: false,
         errorMessage: e as string,

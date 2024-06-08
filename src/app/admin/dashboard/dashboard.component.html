@@ -1,11 +1,11 @@
 <div class="header">
    <div class="brand-logo">Cinemille</div>
    <div class="nav-bar">
-      <img src="logout.svg" alt="Admin Logout" [routerLink]="'/'">
+      <img src="logout.svg" alt="Admin Logout" (click)="logOut()">
    </div>
 </div>
 <div class="widget-container">
-   <div class="widget">Films</div>
-   <div class="widget">Cinemas</div>
-   <div class="widget">Asctive Schedule</div>
+   <app-filmwidget class="widget"></app-filmwidget>
+   <app-cinemawidget class="widget"></app-cinemawidget>
+   <app-schedulewidget class="widget"></app-schedulewidget>
 </div>

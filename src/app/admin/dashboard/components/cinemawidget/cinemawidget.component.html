@@ -1,0 +1,9 @@
+<div class="cinema-widget">
+   <h3>Elenco Sale <span class="totals">{{cinemas()?.length}}</span></h3>
+   <ul>
+      <li *ngFor="let item of cinemas(); index as i">
+         <h5>Sala {{item.cinemaNo}}</h5>
+         <p>Capacita: {{item.capacity}} - Tech: {{item.tech}}</p>
+      </li>
+   </ul>
+</div>

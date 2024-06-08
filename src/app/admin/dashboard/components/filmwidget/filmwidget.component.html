@@ -1,0 +1,9 @@
+<div class="film-widget">
+   <h3>Elenco film <span class="totals">{{films()?.length}}</span></h3>
+   <ul>
+      <li *ngFor="let item of films(); index as i">
+         <h5>{{item.title}}</h5>
+         <p>{{item.releaseDate}} - {{item.isbn}}</p>
+      </li>
+   </ul>
+</div>
