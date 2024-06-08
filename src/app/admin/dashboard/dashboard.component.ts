@@ -1,4 +1,10 @@
-import { Component, WritableSignal, signal } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Output,
+  WritableSignal,
+  signal,
+} from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../features/services/auth.service';
 import { FilmwidgetComponent } from './components/filmwidget/filmwidget.component';
@@ -27,6 +33,12 @@ export class DashboardComponent {
   uploadError: WritableSignal<string | boolean> = signal(false);
   selectedFile: File | null = null;
 
+  @Output() refreshEvent = new EventEmitter<void>();
+
+  refreshWidgets() {
+    this.refreshEvent.emit();
+  }
+
   constructor(private router: Router, private ioService: IOService) {}
 
   logOut() {
@@ -52,5 +64,6 @@ export class DashboardComponent {
     this.selectedFile = null;
     this.uploadError.set(request);
     this.isLoading.set(false);
+    this.refreshWidgets();
   }
 }

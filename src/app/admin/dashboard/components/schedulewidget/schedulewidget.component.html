@@ -1,6 +1,7 @@
 <div class="schedule-widget">
    <h3>Elenco Sale <span class="totals">{{schedules()?.length}}</span></h3>
    <ul>
+      <app-loadspinner *ngIf="isLoading()"></app-loadspinner>
       <li *ngFor="let item of schedules(); index as i">
          <h5>{{item.film.title}}</h5>
          <p>In sala {{item.cinema.cinemaNo}} - Fino a: {{item.endDate}} - Tech: {{item.cinema.tech}}</p>
