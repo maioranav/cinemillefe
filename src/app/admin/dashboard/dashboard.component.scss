@@ -30,16 +30,49 @@
 .widget-container {
   min-height: calc(100dvh - 4rem);
   padding-inline: clamp(18px, 5vw, 60px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  column-gap: 30px;
   background-color: #dddddd;
-  row-gap: 22px;
   padding-block: 20px;
+
+  .widgets {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    background-color: #dddddd;
+    row-gap: 22px;
+    padding-block: 20px;
+  }
+}
+
+.io-widget {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  column-gap: 12px;
+
+  app-loadspinner {
+    scale: 0.5;
+  }
+
+  button {
+    background: black;
+    border-radius: 8px;
+    color: white;
+    padding: 8px 12px;
+    box-shadow: none;
+    border: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
 }
 
 .widget {
+  max-width: 400px;
+  flex-grow: 3;
   min-width: 300px;
 }

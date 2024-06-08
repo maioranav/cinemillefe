@@ -5,7 +5,16 @@
    </div>
 </div>
 <div class="widget-container">
-   <app-filmwidget class="widget"></app-filmwidget>
-   <app-cinemawidget class="widget"></app-cinemawidget>
-   <app-schedulewidget class="widget"></app-schedulewidget>
+   <div class="io-widget">
+      <app-loadspinner *ngIf="isLoading()"></app-loadspinner>
+      <label [htmlFor]="'fileUpload'" *ngIf="uploadError()">{{uploadError()}}</label>
+      <input name="fileUpload" title="fileUpload" type="file" (change)="onFileSelected($event)" />
+      <button (click)="upload()" [disabled]="!selectedFile">IMPORT EXCEL</button>
+      <button (click)="exportXLSX()">EXPORT EXCEL</button>
+   </div>
+   <div class="widgets">
+      <app-filmwidget class="widget"></app-filmwidget>
+      <app-cinemawidget class="widget"></app-cinemawidget>
+      <app-schedulewidget class="widget"></app-schedulewidget>
+   </div>
 </div>
