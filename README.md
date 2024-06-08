@@ -1,20 +1,23 @@
 # Cinemille Frontend
 
-L'obiettivo è creare un’applicazione web per la gestione dei film di un multisala. L’applicazione dovrà permettere la visualizzazione della lista dei film messi in programmazione in un cinema multisala, al fine di organizzare uno storico consultabile dai gestori.
+The goal is to create a web application for managing the movies of a multiplex cinema.\
+The application should allow viewing the list of movies scheduled in a multiplex cinema,\
+in order to organize a searchable history for the managers.
 
 ## RestAPI
 
-Il software è collegato ad un backend scritto in Java SpringBoot sempre da me realizzato, disponibile [qui](https://github.com/maioranav/cinemille).
+The software is connected to a backend written in Java Spring Boot, which I also developed,\
+available [here](https://github.com/maioranav/cinemille).
 
-## Stack Utilizzato
+## Involved Stack
 
 - Angular
 - Typescript
 - SASS
 
-## Script Disponibili
+## Available scripts
 
-I seguenti comandi sono eseguibili da terminale:
+The following commands are executable from the terminal:
 
 ### `npm run start`
 
