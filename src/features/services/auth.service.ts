@@ -1,4 +1,10 @@
-import { Injectable, WritableSignal, signal } from '@angular/core';
+import {
+  Injectable,
+  Signal,
+  WritableSignal,
+  computed,
+  signal,
+} from '@angular/core';
 import { AuthStatus, LoginDTO } from '../types/auth.types';
 import { environment } from '../../environments/environment';
 
@@ -22,20 +28,20 @@ export class AuthService {
     return this._authStatus();
   }
 
-  public refreshToken = async () => {
-    if (!this._authStatus().authToken) return false;
+  public static refreshToken = async () => {
+    if (!AuthService.getInstance().authStatus.authToken) return false;
 
     try {
-      this._authStatus.set({
-        isAuthenticated: this._authStatus().isAuthenticated,
+      AuthService.getInstance()._authStatus.set({
+        isAuthenticated: AuthService.getInstance().authStatus.isAuthenticated,
         isLoading: true,
-        authToken: this._authStatus().authToken ?? '',
+        authToken: AuthService.getInstance().authStatus.authToken ?? '',
       });
 
       const request = await fetch(environment.API_BASE_URL + 'auth/refresh', {
         method: 'GET',
         headers: {
-          Authorization: this._authStatus().authToken ?? '',
+          Authorization: AuthService.getInstance().authStatus.authToken ?? '',
           'Content-Type': 'application/json',
         },
       });
@@ -44,7 +50,7 @@ export class AuthService {
 
       const data: any = request.json();
 
-      this._authStatus.set({
+      AuthService.getInstance()._authStatus.set({
         isAuthenticated: true,
         isLoading: false,
         authToken: 'Bearer ' + data.accessToken,
@@ -52,7 +58,7 @@ export class AuthService {
 
       return true;
     } catch (e) {
-      this._authStatus.set({
+      AuthService.getInstance()._authStatus.set({
         isAuthenticated: false,
         isLoading: false,
         errorMessage: e as string,

@@ -1,7 +1,17 @@
-<p>login works!</p>
-<button [routerLink]="'/'">Home</button>
-<button [routerLink]="'/admin'">Dashboard</button>
-
-<p>token {{this.authService.authStatus.authToken}}</p>
-<p>auth {{this.authService.authStatus.isAuthenticated}}</p>
-<p>load {{this.authService.authStatus.isLoading}}</p>
+<div class="login-container">
+   <h2>Cinemille</h2>
+   <h3>Admin access</h3>
+   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div>
+         <label for="username">Username:</label>
+         <input id="username" formControlName="username" type="text" required>
+      </div>
+      <div>
+         <label for="password">Password:</label>
+         <input id="password" formControlName="password" type="password" required>
+      </div>
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+   </form>
+   <div *ngIf="status?.isLoading">LOADING</div>
+   <div *ngIf="status?.errorMessage">{{status.errorMessage ?? 'Something went wrong'}}</div>
+</div>

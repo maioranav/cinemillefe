@@ -17,12 +17,12 @@ class PermissionsService {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Promise<boolean> {
-    if (
-      this.authService.authStatus.isAuthenticated ||
-      this.authService.authStatus.authToken
-    ) {
+    const isAuth = AuthService.getInstance().authStatus.isAuthenticated;
+    const hasToken = AuthService.getInstance().authStatus.authToken;
+
+    if (isAuth || hasToken) {
       console.log('sono auth');
-      const auth = await this.authService.refreshToken();
+      const auth = await AuthService.refreshToken();
       if (auth) return true;
     }
     this.router.navigate(['admin/login']);
