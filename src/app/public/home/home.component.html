@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <main>
-   <app-nowfeatured />
    <app-loadspinner *ngIf="isLoading()"></app-loadspinner>
+   <app-nowfeatured *ngIf="!isLoading()" [film]="getShuffleActiveFilm()" />
    @if (!isLoading()) {
    <h2 class="section-title">Now on schedule!</h2>
    <div class="scheduled-films">

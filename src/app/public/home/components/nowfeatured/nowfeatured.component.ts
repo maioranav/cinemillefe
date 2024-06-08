@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Film } from '../../../../../features/types/film.types';
 
 @Component({
   selector: 'app-nowfeatured',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './nowfeatured.component.html',
   styleUrl: './nowfeatured.component.scss',
 })
-export class NowfeaturedComponent {}
+export class NowfeaturedComponent {
+  @Input() film?: Film;
+}

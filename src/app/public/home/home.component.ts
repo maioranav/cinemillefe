@@ -54,4 +54,11 @@ export class HomeComponent implements OnInit {
     this.comingSoon.set(soon);
     this.isLoading.set(false);
   }
+
+  getShuffleActiveFilm() {
+    if (!this.nowScheduled()?.length) return;
+
+    const randomIndex = Math.floor(Math.random() * this.nowScheduled().length);
+    return this.nowScheduled()[randomIndex].film;
+  }
 }
