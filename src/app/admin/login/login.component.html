@@ -12,6 +12,6 @@
       </div>
       <button type="submit" [disabled]="loginForm.invalid">Login</button>
    </form>
-   <div *ngIf="status?.isLoading">LOADING</div>
-   <div *ngIf="status?.errorMessage">{{status.errorMessage ?? 'Something went wrong'}}</div>
+   <app-loadspinner *ngIf="status?.isLoading"></app-loadspinner>
+   <div class="error-message" *ngIf="status?.errorMessage">{{status.errorMessage ?? 'Something went wrong'}}</div>
 </div>

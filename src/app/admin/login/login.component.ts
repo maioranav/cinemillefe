@@ -9,13 +9,19 @@ import { AuthService } from '../../../features/services/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthStatus } from '../../../features/types/auth.types';
+import { LoadspinnerComponent } from '../../uiutils/loadspinner/loadspinner.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
+  imports: [
+    RouterLink,
+    ReactiveFormsModule,
+    CommonModule,
+    LoadspinnerComponent,
+  ],
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
