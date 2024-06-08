@@ -39,12 +39,7 @@ export class DashboardComponent {
     this.refreshEvent.emit();
   }
 
-  constructor(private router: Router, private ioService: IOService) {}
-
-  logOut() {
-    AuthService.logout();
-    this.router.navigate(['/']);
-  }
+  constructor(private ioService: IOService) {}
 
   async exportXLSX() {
     this.isLoading.set(true);

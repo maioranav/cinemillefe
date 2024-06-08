@@ -1,0 +1,33 @@
+<div class="history-wrapper">
+   <!-- Date picker -->
+   <div class="date-picker">
+      <label for="startDate">Da:</label>
+      <input type="date" id="startDate" [value]="startDate" (change)="handleStartDate($event)">
+      <label for="endDate">A:</label>
+      <input type="date" id="endDate" [value]="endDate" (change)="handleEndDate($event)">
+   </div>
+
+   <table>
+      <thead>
+         <tr>
+            <!-- Table headers -->
+            <th>Sala</th>
+            <th>Film</th>
+            <th>Inizio</th>
+            <th>Fine</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let schedule of schedules()">
+            <td>{{ schedule.cinema.cinemaNo}}</td>
+            <td>{{ schedule.film.title }}</td>
+            <td>{{ schedule.startDate }}</td>
+            <td>{{ schedule.endDate }}</td>
+         </tr>
+      </tbody>
+   </table>
+
+   <!-- Paginator -->
+   <div class="paginator">
+   </div>
+</div>

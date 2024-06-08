@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  padding-inline: clamp(18px, 5vw, 60px);
+  border-bottom: 1px solid #fff5;
+  background-color: white;
+}
+
+.brand-logo {
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 20px;
+
+  img {
+    width: 1.5rem;
+    transform: translateY(3px);
+    transition: all 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      -webkit-filter: drop-shadow(1px 1px 6px #bbb);
+      filter: drop-shadow(1px 1px 6px #bbb);
+    }
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 12px;
+  }
+}

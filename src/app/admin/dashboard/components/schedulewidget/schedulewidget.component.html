@@ -1,5 +1,5 @@
 <div class="schedule-widget">
-   <h3>Elenco Sale <span class="totals">{{schedules()?.length}}</span></h3>
+   <h3>Programmazione <span class="totals">{{schedules()?.length}}</span></h3>
    <ul>
       <app-loadspinner *ngIf="isLoading()"></app-loadspinner>
       <li *ngFor="let item of schedules(); index as i">

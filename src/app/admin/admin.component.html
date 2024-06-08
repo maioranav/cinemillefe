@@ -1,1 +1,14 @@
+<div class="header">
+   <div class="brand-logo">Cinemille</div>
+   <div class="nav-bar">
+      @if (status?.isAuthenticated && status?.authToken) {
+      <ul>
+         <li routerLink="/admin">Dashboard</li>
+         <li routerLink="/admin/history">Storico</li>
+
+      </ul>
+      }
+      <img src="logout.svg" alt="Admin Logout" (click)="logOut()">
+   </div>
+</div>
 <router-outlet></router-outlet>
