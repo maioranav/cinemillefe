@@ -1,9 +1,13 @@
 <div class="film-card">
    <div class="film-card-image">
-      <img src="cover.jpg" title="Film Cover">
+      <img [src]="image" title="Film Cover">
    </div>
    <div class="film-card-content">
-      <p>John Wick 3</p>
-      <p>La nuova stagione</p>
+      <p>{{title}}</p>
+      @if (endDate) {
+      <p>Cinema {{cinemaNo}} until {{endDate}}</p>
+      } @else {
+      <p>Cinema {{cinemaNo}} starting {{startDate}}</p>
+      }
    </div>
 </div>

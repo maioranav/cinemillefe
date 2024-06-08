@@ -1,29 +1,24 @@
 <app-navbar></app-navbar>
 <main>
    <app-nowfeatured />
+   <app-loadspinner *ngIf="isLoading()"></app-loadspinner>
+   @if (!isLoading()) {
    <h2 class="section-title">Now on schedule!</h2>
    <div class="scheduled-films">
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-   </div>
+      @for (now of nowScheduled(); track now) {
+      <app-filmcard [cinemaNo]="now.cinema.cinemaNo" [endDate]="now.endDate"
+         [image]="now.film.image ? now.film.image : 'https://placehold.co/600x400'"
+         [title]="now.film.title"></app-filmcard>
+      }
+   </div>}
+   @if (!isLoading()) {
    <h2 class="section-title">Soon available...</h2>
    <div class="scheduled-films">
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-      <app-filmcard></app-filmcard>
-   </div>
+      @for (soon of comingSoon(); track soon) {
+      <app-filmcard [cinemaNo]="soon.cinema.cinemaNo" [startDate]="soon.startDate"
+         [image]="soon.film.image ? soon.film.image : 'https://placehold.co/600x400'"
+         [title]="soon.film.title"></app-filmcard>
+      }
+   </div>}
 </main>
 <app-footer></app-footer>

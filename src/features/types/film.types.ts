@@ -3,4 +3,5 @@ export interface Film {
   title: string;
   releaseDate: string;
   isbn: string;
+  image?: string;
 }

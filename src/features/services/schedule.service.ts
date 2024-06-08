@@ -22,4 +22,18 @@ export class ScheduleService {
     const { content } = (await request.json()) as Pages<Schedule>;
     return content;
   };
+
+  public getPublicActiveSchedules = async () => {
+    const request = await fetch(environment.API_BASE_URL + 'public/all', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!request?.ok) throw new Error(await request.text());
+
+    const { content } = (await request.json()) as Pages<Schedule>;
+    return content;
+  };
 }
