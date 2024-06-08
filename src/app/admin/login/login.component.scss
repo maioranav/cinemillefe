@@ -32,7 +32,9 @@ form label {
 form input {
   width: 100%;
   padding: 8px;
+  border-radius: 5px;
   box-sizing: border-box;
+  border: 1px solid #060c19;
 }
 
 form button {
@@ -45,7 +47,13 @@ form button {
   cursor: pointer;
 }
 
+form button:hover {
+  cursor: pointer;
+  background-color: #060c19a2;
+}
+
 form button:disabled {
+  cursor: not-allowed;
   background-color: #ccc;
 }
 
