@@ -44,9 +44,9 @@ export class HomeComponent implements OnInit {
 
     schedules.forEach((el) => {
       if (isAfter(parse(el.startDate, 'yyyy-MM-dd', new Date()), new Date())) {
-        now.push(el);
-      } else {
         soon.push(el);
+      } else {
+        now.push(el);
       }
     });
 
