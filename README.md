@@ -1,27 +1,39 @@
-# Cinemillefe
+# Cinemille Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+L'obiettivo è creare un’applicazione web per la gestione dei film di un multisala. L’applicazione dovrà permettere la visualizzazione della lista dei film messi in programmazione in un cinema multisala, al fine di organizzare uno storico consultabile dai gestori.
 
-## Development server
+## RestAPI
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Il software è collegato ad un backend scritto in Java SpringBoot sempre da me realizzato, disponibile [qui](https://github.com/maioranav/cinemille).
 
-## Code scaffolding
+## Stack Utilizzato
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular
+- Typescript
+- SASS
 
-## Build
+## Script Disponibili
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+I seguenti comandi sono eseguibili da terminale:
 
-## Running unit tests
+### `npm run start`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Runs the application in development mode.\
+Browse https://localhost:4200 to use it.
 
-## Running end-to-end tests
+Any changes to the code are refreshed live.\
+ESLint blocks and displays any errors in the browser.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### `npm run build`
 
-## Further help
+Builds the app for production to the `dist` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+## Environment
+
+You can configure environment variables from the environment.ts\
+file located in the src/environments folder.\
+You can also create an environment.prod.ts file to specify production variables.
