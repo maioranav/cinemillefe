@@ -14,6 +14,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
+        title: 'Cinemille',
         component: HomeComponent,
       },
     ],
@@ -24,16 +25,19 @@ export const routes: Routes = [
     children: [
       {
         path: '',
+        title: 'Cinemille - Dashboard',
         canActivate: [AuthGuard],
         component: DashboardComponent,
       },
       {
         path: 'history',
+        title: 'Cinemille - History',
         canActivate: [AuthGuard],
         component: HistoryComponent,
       },
       {
         path: 'login',
+        title: 'Cinemille - Login',
         component: LoginComponent,
       },
     ],
