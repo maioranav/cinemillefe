@@ -1,6 +1,7 @@
 .film-widget {
   width: 100%;
-  min-height: 65dvh;
+  height: 65dvh;
+  overflow-y: auto;
   background: white;
   padding: 16px;
   border-radius: 8px;
