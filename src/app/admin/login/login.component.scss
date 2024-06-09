@@ -7,6 +7,13 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+h2,
+h3,
+label {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 h2 {
   text-align: center;
   margin-bottom: 20px;

@@ -1,6 +1,13 @@
 {
   "name": "cinemillefe",
-  "version": "0.0.0",
+  "description": "Multiplex CMS Frontend Angular Based",
+  "version": "1.0.0",
+  "private": false,
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +15,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^18.0.0",
     "@angular/common": "^18.0.0",

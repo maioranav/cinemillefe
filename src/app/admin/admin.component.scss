@@ -11,6 +11,8 @@
 .brand-logo {
   font-weight: 200;
   font-size: 1.5rem;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .nav-bar {
@@ -19,7 +21,6 @@
 
   img {
     width: 1.5rem;
-    transform: translateY(3px);
     transition: all 0.3s ease;
 
     &:hover {
@@ -34,5 +35,13 @@
     list-style: none;
     padding: 0;
     gap: 12px;
+
+    li {
+      &:hover {
+        cursor: pointer;
+        font-weight: bold;
+        scale: 0.9;
+      }
+    }
   }
 }

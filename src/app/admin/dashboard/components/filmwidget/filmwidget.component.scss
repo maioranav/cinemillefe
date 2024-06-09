@@ -6,6 +6,11 @@
   padding: 16px;
   border-radius: 8px;
   box-shadow: 2px 2px 12px black;
+
+  * {
+    -webkit-user-select: none;
+    user-select: none;
+  }
 }
 
 h3 {
